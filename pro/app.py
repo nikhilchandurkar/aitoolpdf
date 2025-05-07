@@ -74,7 +74,7 @@ def main():
         st.stop()
     
     # App title and sidebar
-    st.set_page_config(page_title="PDF Q&A with Gemini AI", layout="wide")
+    st.set_page_config(page_title="PDF Q&A with AI", layout="wide")
     
     # Sidebar contents
     with st.sidebar:
