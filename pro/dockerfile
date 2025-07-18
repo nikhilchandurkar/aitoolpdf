@@ -1,10 +1,18 @@
-FROM python:3.10-slim
+# Dockerfile
 
+FROM python:3.10
+
+# Set the working directory
 WORKDIR /app
 
-COPY requirements.txt .
+# Copy the app files
+COPY . /app
+
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Expose Streamlit default port
+EXPOSE 8501
 
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Run the app with environment variable support
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.enableCORS=false"]
